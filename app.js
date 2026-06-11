@@ -3,7 +3,7 @@
 // ============================================
 
 // Contract Address and ABI
-const CONTRACT_ADDRESS = "0xd9145CCE52D386f254917e481eB44e9943F39138";
+const CONTRACT_ADDRESS = "0x00CDAc8a76fC1c7e31cB9fA8c82c7FC76489540f";
 const CONTRACT_ABI = [
     {
         "inputs": [],

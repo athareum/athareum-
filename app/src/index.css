@@ -1,0 +1,310 @@
+/* ── BTCS Token Dashboard — Bitcoin Dark Theme ── */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --btc: #f7931a;
+  --btc-dim: #e07b0a;
+  --bg: #080808;
+  --bg2: #0d0d0d;
+  --bg3: #111;
+  --border: #1a1a1a;
+  --border2: #222;
+  --text: #e5e5e5;
+  --text2: #888;
+  --text3: #555;
+  --success: #22c55e;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #333; }
+
+/* ── BTC Gradient Text ── */
+.btc-gradient {
+  background: linear-gradient(135deg, #f7931a 0%, #ffd166 60%, #f7931a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glass Card ── */
+.glass-card {
+  background: #0f0f0f;
+  border: 1px solid #181818;
+  border-radius: 14px;
+  transition: border-color 0.2s;
+}
+.glass-card:hover {
+  border-color: #222;
+}
+
+/* ── Stat Card ── */
+.stat-card {
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(247,147,26,0.15);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* ── Owner Panel ── */
+.owner-panel {
+  border-color: rgba(247,147,26,0.12) !important;
+  box-shadow: 0 0 40px rgba(247,147,26,0.04);
+}
+
+/* ── BTC Price Ticker ── */
+.btc-ticker {
+  overflow: hidden;
+  background: #0a0a0a;
+  border: 1px solid #141414;
+  border-radius: 8px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: ticker-scroll 28s linear infinite;
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.03em;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Inputs ── */
+.btc-input {
+  width: 100%;
+  background: #0a0a0a;
+  border: 1px solid #1e1e1e;
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+}
+
+.btc-input::placeholder {
+  color: #2e2e2e;
+}
+
+.btc-input:focus {
+  border-color: rgba(247,147,26,0.35);
+  box-shadow: 0 0 0 3px rgba(247,147,26,0.06);
+}
+
+.btc-input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btc-input-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+}
+
+/* Remove number input arrows */
+.btc-input[type=number]::-webkit-inner-spin-button,
+.btc-input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.btc-input[type=number] { -moz-appearance: textfield; }
+
+/* ── Buttons ── */
+.btn-btc {
+  background: linear-gradient(135deg, #f7931a, #e07b0a);
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  font-weight: 700;
+  font-size: 13.5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(247,147,26,0.2);
+  font-family: 'Inter', sans-serif;
+}
+.btn-btc:hover:not(:disabled) {
+  opacity: 0.9;
+  box-shadow: 0 4px 20px rgba(247,147,26,0.35);
+  transform: translateY(-1px);
+}
+.btn-btc:active:not(:disabled) {
+  transform: translateY(0);
+}
+.btn-btc:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  color: #999;
+  font-weight: 500;
+  font-size: 13.5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+.btn-outline:hover:not(:disabled) {
+  border-color: rgba(247,147,26,0.3);
+  color: #f7931a;
+  background: rgba(247,147,26,0.04);
+}
+.btn-outline:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 8px;
+  color: #666;
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+.btn-ghost:hover:not(:disabled) {
+  background: #181818;
+  color: #bbb;
+  border-color: #2a2a2a;
+}
+.btn-ghost:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.btn-danger {
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.3);
+  border-radius: 10px;
+  color: #ef4444;
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+.btn-danger:hover:not(:disabled) {
+  background: rgba(239,68,68,0.15);
+}
+.btn-danger:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.badge-btc {
+  background: rgba(247,147,26,0.1);
+  border: 1px solid rgba(247,147,26,0.2);
+  color: #f7931a;
+}
+
+/* ── Section Labels ── */
+.section-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Spinner ── */
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.15);
+  border-top-color: #f7931a;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Toast animation ── */
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(20px) scale(0.95); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+/* ── Pulse skeleton ── */
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(247,147,26,0.2);
+  color: #fff;
+}

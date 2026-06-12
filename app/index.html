@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTCS Token Dashboard</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@18.2.0",
+          "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+          "ethers": "https://esm.sh/ethers@6.11.1"
+        }
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/index.css" />
+    <script>
+      window.__QUICK_DAPP_CONFIG__ = window.__QUICK_DAPP_CONFIG__ || {
+        title: "BTCS Token Dashboard",
+        contractAddress: "0x11eBbdF5637B40B2345Dde1FD44fAa068ff23027",
+        chainId: 11155111,
+      };
+    </script>
+  </head>
+  <body style="background:#080808;color:#e5e5e5;min-height:100vh;">
+    <div id="root"></div>
+    <script type="module" src="./src/main.jsx"></script>
+  </body>
+</html>

@@ -1,13 +1,13 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { ethers } from 'ethers';
-import Header from './components/Header.jsx';
-import TokenStats from './components/TokenStats.jsx';
-import TransferForm from './components/TransferForm.jsx';
-import ApproveForm from './components/ApproveForm.jsx';
-import AllowanceChecker from './components/AllowanceChecker.jsx';
-import MintSection from './components/MintSection.jsx';
-import OwnershipPanel from './components/OwnershipPanel.jsx';
-import Toast from './components/Toast.jsx';
+import Header from 'components/Header.jsx';
+import TokenStats from 'components/TokenStats.jsx';
+import TransferForm from 'components/TransferForm.jsx';
+import ApproveForm from 'components/ApproveForm.jsx';
+import AllowanceChecker from 'components/AllowanceChecker.jsx';
+import MintSection from 'components/MintSection.jsx';
+import OwnershipPanel from 'components/OwnershipPanel.jsx';
+import Toast from 'components/Toast.jsx';
 
 const CONTRACT_ADDRESS = '0x11eBbdF5637B40B2345Dde1FD44fAa068ff23027';
 const TARGET_CHAIN_ID = 11155111;
